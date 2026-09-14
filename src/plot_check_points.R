@@ -4,11 +4,13 @@
 # passed into here as command line arguments. These are plotted over the
 # downsampled georeferenced map as star with the name of the location.
 # Output is saved to `./outputs/checks`
+
+# Usage:
+#   Rscript src/plot_check_points.R configs/<map_name>.R [plot_scale]
 library(magick)
 source("src/gcp_transform.R")
 
 args <- commandArgs(trailingOnly = TRUE)
-if (length(args) < 1) stop("Usage: Rscript src/plot_check_points.R configs/<map_name>.R [plot_scale]")
 config_path <- args[1]
 source(config_path)
 
